@@ -10,7 +10,8 @@ export default function Post(){
             <time> 07-03-2023 17:00</time>
           </p>
 
-        <p className="summary"> Do you want a job in tech, but don’t have a computer science degree? Or do you already know how to code, but don’t know how to break into the industry?
+        <p className="summary"> Do you want a job in tech, but don’t have a computer science degree?
+         Or do you already know how to code, but don’t know how to break into the industry?
 
 If you said “yes”, then this article is for you. </p>
         </div>

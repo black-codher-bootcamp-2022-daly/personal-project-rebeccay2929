@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 
 // const express = require("express");
 // const mongoose = require("mongoose");
@@ -23,16 +23,21 @@
 // // It's importing and using everything from the profilesRoutes.js file and also passing app as a parameter for profileRoutes to use
 // require("./routes/profilesRoutes")(app); 
 
-// const PORT = process.env.PORT;
-// app.listen(PORT, () => {
-//   console.log(`API running on port ${PORT}`);
-// });
+
 
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
-app.get('/test', (req,res) => {
+app.use(cors());
+
+
+app.get('/register', (req,res) => {
   res.json('test ok2');
 })
-app.listen(4000);
+// app.listen(8080);
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`API running on port ${PORT}`);
+});

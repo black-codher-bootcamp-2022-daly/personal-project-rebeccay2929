@@ -38,9 +38,20 @@ app.use(express.json());
 
 
 
-app.post('/register', (req,res) => {
- res.json('test ok3');
-});
+
+
+
+// require("dotenv").config();
+// const express = require('express');
+// const app = express();
+
+// app.use(express.json());
+// app.use(bodyParser.json());
+
+
+// app.post('/register', (req,res) => {
+//  res.json('test ok3');
+// });
 
 // app.post('register', async (req,res) => {
 //        await RegisterPage().insertOne(req.body)
@@ -68,7 +79,7 @@ app.post('/register', (req,res) => {
 
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`API running on port ${PORT}`);
 });

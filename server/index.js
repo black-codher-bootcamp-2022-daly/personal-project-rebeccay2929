@@ -1,6 +1,19 @@
 // const express = require("express");
 // const mongoose = require("mongoose");
+
+
+require("dotenv").config();
+const express = require('express');
+const cors = require('cors');
+const { default: RegisterPage } = require("../client/src/pages/RegisterPage");
+const app = express();
 const bodyParser = require("body-parser");
+
+app.use(cors());
+app.use(express.json());
+// app.use(bodyParser.json());
+
+
 
 // // IMPORT YOUR SCHEMAS HERE
 // require("./models/Profiles"); //This is just an example. Don't forget to delete this
@@ -14,7 +27,6 @@ const bodyParser = require("body-parser");
 //   useNewUrlParser: true,
 // });
 
-app.use(bodyParser.json());
 
 // // IMPORT YOUR API ROUTES HERE
 // // Below is just an example. Don't forget to delete it. 
@@ -26,22 +38,9 @@ app.use(bodyParser.json());
 
 
 
-
-
-
-require("dotenv").config();
-const express = require('express');
-const cors = require('cors');
-const { default: RegisterPage } = require("../client/src/pages/RegisterPage");
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-
-
-// app.post('/register', (req,res) => {
-//  res.json('test ok3');
-// });
+app.post('/register', (req,res) => {
+ res.json('test ok3');
+});
 
 // app.post('register', async (req,res) => {
 //        await RegisterPage().insertOne(req.body)

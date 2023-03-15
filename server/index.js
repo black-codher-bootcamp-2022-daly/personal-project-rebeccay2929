@@ -14,7 +14,6 @@ const bodyParser = require("body-parser");
 //   useNewUrlParser: true,
 // });
 
-app.use(bodyParser.json());
 
 // // IMPORT YOUR API ROUTES HERE
 // // Below is just an example. Don't forget to delete it. 
@@ -31,17 +30,15 @@ app.use(bodyParser.json());
 
 require("dotenv").config();
 const express = require('express');
-const cors = require('cors');
-const { default: RegisterPage } = require("../client/src/pages/RegisterPage");
 const app = express();
 
-app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 
-// app.post('/register', (req,res) => {
-//  res.json('test ok3');
-// });
+app.post('/register', (req,res) => {
+ res.json('test ok3');
+});
 
 // app.post('register', async (req,res) => {
 //        await RegisterPage().insertOne(req.body)
@@ -69,7 +66,7 @@ app.use(express.json());
 
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`API running on port ${PORT}`);
 });

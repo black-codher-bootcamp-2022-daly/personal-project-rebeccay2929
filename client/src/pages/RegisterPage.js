@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  async function  register(ev) {
+  async function register(ev) {
     ev.preventDefault();
     await fetch ('http://localhost:8080/register', { 
 

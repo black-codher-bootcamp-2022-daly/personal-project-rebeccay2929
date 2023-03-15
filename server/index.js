@@ -1,17 +1,14 @@
-// const express = require("express");
-// const mongoose = require("mongoose");
 
 
 require("dotenv").config();
 const express = require('express');
-const cors = require('cors');
-const { default: RegisterPage } = require("../client/src/pages/RegisterPage");
 const app = express();
 const bodyParser = require("body-parser");
+const cors= require('cors') 
+app.use(cors()); 
 
-app.use(cors());
 app.use(express.json());
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 
 
@@ -49,10 +46,15 @@ app.use(express.json());
 // app.use(bodyParser.json());
 
 
-// app.post('/register', (req,res) => {
-//  res.json('test ok3');
-// });
+app.post('/register', (req,res) => {
+ res.json('test ok3');
+});
 
+
+// app.get('/register', (req,res) => {
+//   res.json('test ok3');
+//  });
+ 
 // app.post('register', async (req,res) => {
 //        await RegisterPage().insertOne(req.body)
   

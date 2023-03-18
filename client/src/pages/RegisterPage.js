@@ -5,7 +5,8 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   async function register(ev) {
     ev.preventDefault();
-    await fetch ('http://localhost:8080/register', { 
+    
+     await fetch ('http://localhost:8080/register', { 
 
     method: 'POST',
      body: JSON.stringify({username,password}),

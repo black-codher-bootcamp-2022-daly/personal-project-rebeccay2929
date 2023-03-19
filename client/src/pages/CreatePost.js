@@ -2,22 +2,21 @@ import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-// const modules = {
-//   toolbar: [
-//     [{ 'header': [1, 2, false] }],
-//     ['bold', 'italic', 'underline','strike', 'blockquote'],
-//     [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-//     ['link', 'image'],
-//     ['clean']
-//   ]
-
-// }
-// const formats = [
-//   'header',
-//     'bold', 'italic', 'underline', 'strike', 'blockquote',
-//     'list', 'bullet', 'indent',
-//     'link', 'image'
-// ],
+const modules = {
+  toolbar: [
+    [{ 'header': [1, 2, false] }],
+    ['bold', 'italic', 'underline','strike', 'blockquote'],
+    [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+    ['link', 'image'],
+    ['clean']
+  ]
+};
+const formats = [
+  'header',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image'
+]
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
@@ -40,7 +39,7 @@ export default function CreatePost() {
       />
       <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
       {/* <Editor value={content} onChange={setContent} /> */}
-      <ReactQuill value={content} /*modules=modules*/  />
+      <ReactQuill value={content} onChange={newValue => setContent(newValue)} modules= {modules} formats= {formats}/>
       <button style={{ marginTop: "5px" }}> Create post</button>
     </form>
   );

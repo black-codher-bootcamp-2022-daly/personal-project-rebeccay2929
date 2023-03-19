@@ -22,9 +22,26 @@ export default function CreatePost() {
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [content, setContent] = useState("");
+  const [files,setFiles] = useState('');
+ async function createNewPost(ev){
+    const data = new FormData();
+    data.set('title', title);
+    data.set('summary', summary);
+    data.set('content', content);
+    data.set('file',files[0])
+ev.preventDefault();
+console.log(files)
+
+await fetch('http://localhost:8080/post', {
+  method: 'POST',
+  body: data, 
+
+})
+
+  }
 
   return (
-    <form>
+    <form onSubmit={createNewPost}>
       <input
         type="title"
         placeholder={"Title"}
@@ -37,7 +54,8 @@ export default function CreatePost() {
         value={summary}
         onChange={(ev) => setSummary(ev.target.value)}
       />
-      <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
+      <input type="file"  
+       onChange={(ev) => setFiles(ev.target.files)} />
       {/* <Editor value={content} onChange={setContent} /> */}
       <ReactQuill value={content} onChange={newValue => setContent(newValue)} modules= {modules} formats= {formats}/>
       <button style={{ marginTop: "5px" }}> Create post</button>

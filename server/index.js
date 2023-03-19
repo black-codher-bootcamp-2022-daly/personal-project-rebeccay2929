@@ -2,9 +2,13 @@ require("dotenv").config();
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
-const cors= require('cors'); 
+const cors = require('cors'); 
 const mongoose  = require("mongoose");
 const User = require('./models/User');
+const Post = require('./models/Post')
+const multer = require('multer'); 
+const uploadMiddlewar = multer({dest: 'uploads/'})
+const fs = require('fs')
 app.use(cors()); 
 
 app.use(express.json());
@@ -35,6 +39,28 @@ res. status(400).json(e)
 
 }); 
 
+
+app.post('/post', uploadMiddlewar.single('file'), async(req,res) => {
+  const {originalname,path} = req.file;
+  
+const parts = originalname.split('.');
+  const ext = parts[parts.length - 1];
+
+//   const newPath = path+'.'+ext;
+   fs.renameSync(path, path+'.'+ext);
+  res.json({ext});
+
+//   const {title, summary, content} = req.body
+
+//   const postDoc = await Post.create({
+// title,
+// summary,
+// content,
+// cover: newPath,
+//   })
+  
+// res.json({files:req.file});
+})
 
 
 

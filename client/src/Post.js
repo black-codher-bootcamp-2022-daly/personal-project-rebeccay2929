@@ -1,8 +1,8 @@
 import {formatISO9075} from "date-fns";
 
-export default function Post({title, summary, cover, content, createdAt }){
+export default function Post({title, summary, cover,  createdAt}){
   return(
-      <div className="post">
+      <div className="post" >
          <div className="image">
           <img src={'http://localhost:8080/'+cover} alt=""/>
       </div>

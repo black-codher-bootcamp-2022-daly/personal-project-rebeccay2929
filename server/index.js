@@ -15,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use('/uploads', express.static(__dirname + '/uploads'));
+console.log(__dirname + '/../uploads');
+
 
 
 mongoose.connect(process.env.DATABASE_CONNECTION_STRING);
@@ -59,7 +61,10 @@ app.post("/post", uploadMiddlewar.single("file"), async (req, res) => {
 
 app.get('/post', async (req, res) =>{
   res.json(await Post.find()
-  .limit(20));
+  .sort({createdAt: -1})
+  .limit(20)
+  );
+  
 })
 
 

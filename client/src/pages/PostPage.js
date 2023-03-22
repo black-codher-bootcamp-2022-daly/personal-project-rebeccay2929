@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
 import { UserContext } from "../UserContext";
-import { Link } from "react-router-dom";
 
 export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
@@ -15,9 +14,6 @@ export default function PostPage() {
       });
     });
   }, []);
-
-  // const path =  (`http://localhost:8080/post/${id}`)
-  //   console.log('path', path)
 
   if (!postInfo) return "";
 
@@ -32,6 +28,16 @@ export default function PostPage() {
           Edit this post
         </a>
       </div>
+{/* 
+{userInfo.id === postInfo._id && (
+        <div className="edit-row">
+          <a className="edit-btn" to={`/edit/${postInfo._id}`}>
+            Edit this post
+          </a>
+        </div>
+      )} */}
+
+
 
       <div className="image">
         <img src={`http://localhost:8080/${postInfo.cover}`} alt="" />

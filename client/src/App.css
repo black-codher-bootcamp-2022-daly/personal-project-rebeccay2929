@@ -46,6 +46,11 @@ main{
   margin-bottom: 30px;
 
  }
+ @media screen and (min-width: 700px) {
+  div.post{
+      grid-template-columns: .9fr 1.1fr;
+  }
+}
 
 
  div.post div.texts h2{
@@ -101,3 +106,5 @@ button{
 form.login h1, form.register h1{
   text-align: center;
 }
+
+

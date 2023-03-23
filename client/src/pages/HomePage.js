@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Post from "../Post";
+import Sidebar from "../Sidebar";
 
 export default function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -12,9 +13,13 @@ export default function HomePage() {
     });
   }, []);
   return (
-    <>
+    <> 
+    <div className="posts">
       {posts.length > 0 &&
         posts.map((post, index) => <Post key={index} {...post} />)}
+    
+    </div>    
+    <Sidebar/>
     </>
   );
 }

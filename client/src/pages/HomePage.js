@@ -14,12 +14,14 @@ export default function HomePage() {
   }, []);
   return (
     <> 
-    <div className="posts">
+    <div className="home">
+      <div className ="posts" >  
       {posts.length > 0 &&
-        posts.map((post, index) => <Post key={index} {...post} />)}
-    
-    </div>    
-    <Sidebar/>
+        posts.map((post, index) => <Post  key={index} {...post} />)}
+    </div>
+    <Sidebar/> 
+       </div>    
+
     </>
   );
-}
+}  

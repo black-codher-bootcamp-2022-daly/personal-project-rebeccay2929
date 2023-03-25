@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 export default function Post({ _id, title, summary, cover, createdAt }) {
   return (
     <div className="post">
-          <div className="image" > 
-          <Link to={`/post/${_id}`}>
+          <Link  to={`/post/${_id}`}>
             {" "}
-           <img src={"http://localhost:8080/" + cover} alt=" https://learntocodewith.me/wp-content/uploads/2019/11/How-to-Get-a-Great-Tech-Job-1536x805.png" /> 
+           <img  className="imgLink" src={"http://localhost:8080/" + cover} alt=" https://learntocodewith.me/wp-content/uploads/2019/11/How-to-Get-a-Great-Tech-Job-1536x805.png" /> 
           </Link>
-          </div>
               <div className="postInfo">
 
         <div className="texts">

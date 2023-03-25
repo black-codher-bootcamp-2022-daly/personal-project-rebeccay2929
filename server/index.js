@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
+
 mongoose.connect(process.env.DATABASE_CONNECTION_STRING);
 
 // app.post('/register', (req,res) => {
@@ -32,11 +33,12 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/post", uploadMiddlewar.single("file"), async (req, res) => {
-  const { title, summary, content } = req.body;
+  const { title, summary, content  } = req.body;
   const options = {
     title,
     summary,
     content,
+    
   };
   if (req.file) {
     const { originalname, path } = req.file;

@@ -32,7 +32,6 @@ export default function Post({ _id, title, summary, cover, createdAt }) {
             <p className="summary"> {summary} </p>
 
           </div>
-          
     </div>
   );
 }

@@ -269,6 +269,8 @@ a:link {
      text-decoration: none; 
     }
 
+
+ 
 .singlePostInfo {
   margin-bottom: 20px;
   display: flex;
@@ -277,7 +279,13 @@ a:link {
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
   color: #1E90FF	;
 
-}
+}   
+.singlePostAuthor{
+      margin-left: 2px;
+      font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  color: #1E90FF	;
+    }
+    
 
 .content{
   color: #666;

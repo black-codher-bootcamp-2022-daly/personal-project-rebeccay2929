@@ -56,6 +56,7 @@ export default function PostPage() {
               alt=""
             />
           </div>
+            <span className="singlePostAuthor"> <i>Author: Rebecca Boateng </i></span>
 
           <div className="singlePostInfo">
             {" "}

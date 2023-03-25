@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Navigate} from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -38,7 +38,6 @@ export default function CreatePost() {
   const [files, setFiles] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-
   async function createNewPost(ev) {
     const data = new FormData();
     data.set("title", title);
@@ -52,36 +51,55 @@ export default function CreatePost() {
       method: "POST",
       body: data,
     });
-if (response.ok) {
-setRedirect(true);
-}  
-}
-if (redirect) {
-  return <Navigate to={'/'}/>
-}
+    if (response.ok) {
+      setRedirect(true);
+    }
+  }
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
   return (
-    <form onSubmit={createNewPost}>
-      <input
-        type="title"
-        placeholder={"Title"}
-        value={title}
-        onChange={(ev) => setTitle(ev.target.value)}
-      />
-      <input
-        type="summary"
-        placeholder={"Summary"}
-        value={summary}
-        onChange={(ev) => setSummary(ev.target.value)}
-      />
-      <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
-      {/* <Editor value={content} onChange={setContent} /> */}
-      <ReactQuill
-        value={content}
-        onChange={(newValue) => setContent(newValue)}
-        modules={modules}
-        formats={formats}
-      />
-      <button style={{ marginTop: "5px" }}> Create post</button>
-    </form>
+    <div className="write">
+      <form className="writeForm" onSubmit={createNewPost}>
+        <div className="writeFormGroup">
+          <input
+            className="writeInput"
+            type="title"
+            placeholder={"Title"}
+            autoFocus={true}
+            value={title}
+            onChange={(ev) => setTitle(ev.target.value)}
+          />
+        </div>
+
+        
+        <div className="writeFormGroup">
+        <input
+        className="writeInput writeText"
+          type="summary"
+          placeholder={"Summary"}
+          autoFocus={true}
+          value={summary}
+          onChange={(ev) => setSummary(ev.target.value)}
+        />
+
+
+         </div>
+
+
+        <input id="fileInput" type="file" style={{display: "none"}} onChange={(ev) => setFiles(ev.target.files)} />
+        <label htmlFor="fileInput">
+          {" "}
+          <i className="writeIcon fas fa-plus"></i>
+        </label>
+        <ReactQuill
+          value={content}
+          onChange={(newValue) => setContent(newValue)}
+          modules={modules}
+          formats={formats}
+        />
+        <button style={{ marginTop: "5px" }}> Create post</button>
+      </form>
+    </div>
   );
 }

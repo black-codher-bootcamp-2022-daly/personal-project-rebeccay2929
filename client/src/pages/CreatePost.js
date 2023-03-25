@@ -62,6 +62,10 @@ export default function CreatePost() {
     <div className="write">
       <form className="writeForm" onSubmit={createNewPost}>
         <div className="writeFormGroup">
+        <label htmlFor="fileInput">
+          {" "}
+          <i className="writeIcon fas fa-plus"></i>
+        </label>
           <input
             className="writeInput"
             type="title"
@@ -87,18 +91,18 @@ export default function CreatePost() {
          </div>
 
 
+        <div className="writeFormGroup"> 
         <input id="fileInput" type="file" style={{display: "none"}} onChange={(ev) => setFiles(ev.target.files)} />
-        <label htmlFor="fileInput">
-          {" "}
-          <i className="writeIcon fas fa-plus"></i>
-        </label>
         <ReactQuill
           value={content}
           onChange={(newValue) => setContent(newValue)}
           modules={modules}
           formats={formats}
-        />
-        <button style={{ marginTop: "5px" }}> Create post</button>
+          />
+                <button className = "writeSubmit" type ="submit" style={{ marginTop: "5px" }}> Publish post</button>
+
+
+        </div>
       </form>
     </div>
   );

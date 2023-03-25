@@ -98,6 +98,7 @@ export default function CreatePost() {
           onChange={(newValue) => setContent(newValue)}
           modules={modules}
           formats={formats}
+          placeholder="Write your post here..."
           />
                 <button className = "writeSubmit" type ="submit" style={{ marginTop: "5px" }}> Publish post</button>
 

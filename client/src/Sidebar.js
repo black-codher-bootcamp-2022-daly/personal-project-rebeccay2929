@@ -6,12 +6,17 @@ export default function Sidebar() {
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT ME</span>
         <img
-          src="https://i.pinimg.com/236x/1e/3f/58/1e3f587572a7a7b20bbf1828595a1786--holiday-party-themes-holiday-gift-guide.jpg"
-          alt=""
+src="https://em-content.zobj.net/thumbs/240/google/350/woman-technologist-dark-skin-tone_1f469-1f3ff-200d-1f4bb.png"
+     alt=""
         />
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate qui
-          necessitatibus nostrum illum reprehenderit.
+          Rebecca Boateng
+          <br></br>
+     Software Developer   
+          <br></br>
+
+           <i>  Black CodHer Bootcamp</i>
+
         </p>
       </div>
       <div className="sidebarItem">
@@ -22,7 +27,7 @@ export default function Sidebar() {
         </ul>
       </div>
       <div className="sidebarItem">
-        <span className="sidebarTitle">FOLLOW US</span>
+        <span className="sidebarTitle">FOLLOW ME</span>
         <div className="sidebarSocial">
           <i className="sidebarIcon fab fa-facebook-square"></i>
           <i className="sidebarIcon fab fa-twitter-square"></i>

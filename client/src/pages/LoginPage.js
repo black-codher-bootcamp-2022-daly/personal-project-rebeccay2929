@@ -4,10 +4,10 @@ export default function LoginPage() {
       <span className="loginTitle"> Login</span>
       <form className="loginForm">
         <label>
-          <input type="text" placeholder="username" />{" "}
+          <input className="loginInput" type="text" placeholder="username" />{" "}
         </label>
         <label>
-          <input type="password" placeholder="password" />{" "}
+          <input  className="loginInput"  type="password" placeholder="password" />{" "}
         </label>
         <button className="loginButton">Login</button>
       </form>
